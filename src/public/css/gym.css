@@ -1,0 +1,18 @@
+#disciplinas .card {
+    transition: transform 0.3s ease;
+}
+
+#disciplinas .card:hover {
+    transform: scale(1.05);
+}
+.btn-primary{
+    background-color: rgb(207, 21, 21);
+}
+#login-nav{
+    background-color: rgb(65, 99, 255);
+    font-weight: bolder;
+}
+.btn-login{
+    margin-top:20px;
+    padding:1em;
+}

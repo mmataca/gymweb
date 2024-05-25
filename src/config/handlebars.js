@@ -1,15 +1,21 @@
 const exphbs = require('express-handlebars');
 const path = require('path');
 
-//const handlebarsHelpers = require('../helpers/handlebars-help');
+const navbarHelpers = require('../helpers/navbarHelpers');
+const ifEqualsHelper = require('../helpers/ifEqualsHelper');
 
 module.exports = function (app) {
   const hbs = exphbs.create({
-    // helpers: handlebarsHelpers,
     defaultLayout: 'main',
     layoutsDir: path.join(app.get('views'), 'layouts'),
     partialsDir: path.join(app.get('views'), 'partials'),
-    extname: '.hbs'
+    extname: '.hbs',
+    helpers: {
+
+      ifEqualsHelper,  
+      navbarHelpers
+      
+  }
   });
 
   app.engine('.hbs', hbs.engine);

@@ -1,5 +1,5 @@
 const LocalStrategy = require('passport-local').Strategy;
-// const bcrypt = require('bcrypt');
+
 const Usuario = require('../model/Usuario.js');
 
 function initialize(passport) {

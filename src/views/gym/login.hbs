@@ -1,18 +1,46 @@
-<div class="container">
-    <div class="row justify-content-center mt-5" style="height: 100vh;">
-        <div class="col-md-6">
-            <h2 class="text-center mb-4">Inicio de Sesión</h2>
-           <form action="/login" method="POST"> 
+<link rel="stylesheet" href="/css/modal.css">
+
+<div class="login-container d-flex justify-content-center align-items-center">
+    <div class="card login-card">
+        <div class="card-body">
+            <h5 class="card-title text-center">Iniciar Sesión</h5>
+            <form id="loginForm" method="POST" action="/login">
                 <div class="form-group">
-                    <label for="username">Nombre de usuario:</label>
+                    <label for="username">Usuario:</label>
                     <input type="text" class="form-control" id="username" name="username" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Contraseña:</label>
                     <input type="password" class="form-control" id="password" name="password" required>
                 </div>
-                <button type="submit" class="btn btn-primary btn-login">Iniciar Sesión</button>
+                <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
             </form>
         </div>
     </div>
 </div>
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+<!-- Modal -->
+<div class="modal" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+               <i class="fas fa-exclamation-circle modal-icon"></i> 
+                <h5 class="modal-title" id="errorModalLabel">Error de Autenticación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- Asegura que el botón de cierre esté presente -->
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Mensaje de error se insertará aquí -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/login.js"></script>

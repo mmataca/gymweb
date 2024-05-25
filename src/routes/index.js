@@ -7,4 +7,6 @@ module.exports= function(app){
     // app.use("/", require("./auth"));
     app.use("/", require("./home.js"));  
     app.use("/", require("./auth"));
+    app.use("/", require("./user/mi-cuenta.js"));
+    app.use("/postulantes", require("./postulantes/registro.js"));
 }

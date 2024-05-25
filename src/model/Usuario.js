@@ -42,7 +42,7 @@ class Usuario {
             if (result[0].length > 0) {
                 const data = result[0][0];
                 const usuario = new Usuario(data.id, data.username, data.pass, data.rol, data.disciplina, data.estado);
-                console.log('Usuario en modelo: '+ usuario.username);
+                console.log('Nombre de usuario en modelo: '+ usuario.username);
                 return usuario;
             } else {
                 console.log('Usuario nulo.');

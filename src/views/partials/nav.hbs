@@ -1,34 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <link rel="stylesheet" href="/css/nav.css" />
-    <div class="container">
+<!-- views/partials/nav.hbs -->
+<!-- views/partials/nav.hbs -->
 
+<nav class="footer navbar navbar-expand-lg navbar-dark bg-dark">
+    <link rel="stylesheet" href="/css/gym.css" />
+    <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-
                 <li id="login-nav">
-                    <a class="nav-link" href="/login" class="button" id="login">
-                        INICIAR SESION
-                    </a>
+                    {{#if usuarioAutenticado}}
+                        {{{ navbarContent rolUsuario }}}
+                    {{else}}
+                        <a class="nav-link" href="/login">Iniciar sesión</a>
+                    {{/if}}
                 </li>
-
                 <li class="nav-item dropdown">
                     <span class="nav-link" role="button">
-                        En construcción
+                        Opciones generales
                     </span>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">En contstruccion</a>
-                        <a class="dropdown-item" href="#">En contstruccion</a>
-                        <a class="dropdown-item" href="#">En contstruccion</a>
+                        {{#if usuarioAutenticado}}
+                            {{#ifEquals rolUsuario 1}}
+                                <a class="dropdown-item" href="#">Opción de Admin</a>
+                            {{else}}
+                                <a class="dropdown-item" href="#">Opción de Usuario no Admin</a>
+                            {{/ifEquals}}
+                        {{/if}}
                     </div>
                 </li>
             </ul>
         </div>
-
-        <!-- Linkear Javascript -->
-        {{!
-        <script src="/js/nav.js" defer></script> }}
+    </div>
 </nav>
+

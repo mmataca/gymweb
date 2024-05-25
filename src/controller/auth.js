@@ -1,30 +1,21 @@
-// const Usuario = require('../model/Usuario');
 const passport = require('passport');
-
 exports.loginController = (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (err) {
-      return next(err);
-    
+      return res.status(500).json({ message: 'Error del servidor. Por favor, inténtelo de nuevo.' });
     }
     if (!user) {
-    console.log("infomess: " + info.message);
-    return res.render('gym/errs/loginErr.hbs',{message: info.message});
-
+      return res.status(401).json({ message: info.message });
     }
     req.login(user, function(err) {
       if (err) { 
-        return next(err); 
+        return res.status(500).json({ message: 'Error al iniciar sesión. Por favor, inténtelo de nuevo.' });
       }
-
-      // return res.redirect('/mi-cuenta');
-        console.log("Exito en login");
-        res.render("gym/user/mi-cuenta.hbs");
- 
+      res.status(200).json({ message: 'Inicio de sesión exitoso', redirect: '/mi-cuenta' }); 
     });
-
-  }) (req, res, next);
+  })(req, res, next);
 };
+
 
 exports.logoutController = (req, res) => {
   req.logout((err) => {

@@ -25,7 +25,7 @@ const passport= require('./config/passport')(app);
 //config de vistas
 app.set('views', path.join(__dirname, 'views'));
 const hbs = require('./config/handlebars')(app); 
-// const $ = require('jquery'); //Middleware: JQuery Aún no
+
 
 //rutas
 const rutas = require('./routes/index')(app);
@@ -40,3 +40,7 @@ const myConnection = require('express-myconnection');
 app.listen(app.get('port'), () => {
     console.log('Servidor en puerto ' + app.get('port') + '.')
   });
+
+
+
+  // const $ = require('jquery'); //Middleware: JQuery Aún no

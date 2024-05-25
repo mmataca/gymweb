@@ -1,3 +1,24 @@
+.login-container {
+    min-height: 75vh; /* Full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa; /* Light background */
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.card-title {
+    margin-bottom: 1.5rem;
+}
+
 #disciplinas .card {
     transition: transform 0.3s ease;
 }
@@ -6,6 +27,7 @@
     transform: scale(1.05);
 }
 .btn-primary{
+    margin-top:20px;
     background-color: rgb(207, 21, 21);
 }
 #login-nav{
@@ -16,3 +38,9 @@
     margin-top:20px;
     padding:1em;
 }
+
+/* .modal {
+    z-index: 0; /* Anula el z-index del modal */
+/* .bg-dark{
+background-color: rgb(107, 17, 17) !important;
+} */

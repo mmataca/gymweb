@@ -5,7 +5,7 @@ const LocalStrategy = require('passport-local').Strategy;
 
 module.exports=function(app){
     initializePassport(passport);
-    app.use(session({ secret: 'secret-key', resave: true, saveUninitialized: true })); //from false to true
+    app.use(session({ secret: 'secret-key', resave: true, saveUninitialized: true }));
     app.use(passport.initialize());
     app.use(passport.session());
 
